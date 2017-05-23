@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://cs548.stevens.edu/clinic/dto"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	jaxb:version="3.1"
+	elementFormDefault="unqualified" 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tns="http://cs548.stevens.edu/clinic/dto">
+
+	<element name="provider-dto">
+		<complexType >
+			<sequence>
+				<element name="provider-id" type="long"></element>
+				<element name="name" type="string"></element>
+				<element name="specialization" type="string"></element>
+				<element name="treatments" type="long" minOccurs="0" maxOccurs="unbounded"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<simpleType name="specializationType">
+		<restriction base="string">
+			<enumeration value="Radiology"></enumeration>
+			<enumeration value="Surgery"></enumeration>
+			<enumeration value="Oncology"></enumeration>
+			<enumeration value="Internist"></enumeration>
+		</restriction>
+	</simpleType> 
+</schema>

@@ -1,0 +1,32 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix clinic: <http://www.example.org/clinic#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+clinic:Provider a owl:Class .
+clinic:Treatment a owl:Class .
+clinic:Patient a owl:Class .
+clinic:Surgeons a clinic:Provider .
+clinic:Radiologists a clinic:Provider .
+clinic:Internists a clinic:Provider .
+clinic:Surgery a clinic:Treatment .
+clinic:Radiology a clinic:Treatment .
+clinic:DrugTreatment a clinic:Treatment .
+clinic:ProvidedBy a owl:ObjectProperty ;
+  rdfs:domain clinic:Treatment ;
+  rdfs:range clinic:Provider .
+clinic:ReceivedBy a owl:ObjectProperty ;
+  rdfs:domain clinic:Treatment ;
+  rdfs:range clinic:Patient ;
+  owl:inverseOf clinic:receives .
+  clinic:receives a owl:ObjectProperty .
+clinic:RadiologistProvided rdfs:subClassOf
+ [ a owl:Restriction;   owl:onProperty :ProvidedBy;   owl:hasValue clinic:Radiologists] .
+clinic:RadiologyPatient rdfs:subClassOf
+ [ a owl:Restriction;   owl:onProperty :receives;   owl:hasValue clinic:Radiology] .
+  clinic:PatientId a owl:FunctionalProperty ;
+   a owl:InverseFunctionalProperty ;
+   rdfs:domain clinic:Patient ;
+   rdfs:range xsd:Integer .

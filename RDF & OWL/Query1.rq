@@ -1,0 +1,3 @@
+PREFIX  clinic:   <http://www.example.org/clinic#>
+
+select ?patients where { ?patients a clinic:RadiologyPatient }

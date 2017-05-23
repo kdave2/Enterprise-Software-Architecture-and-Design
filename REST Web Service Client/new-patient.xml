@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<patientRepresentation
+	xmlns:ns2="http://cs548.stevens.edu/clinic/service/web/rest/data">
+	<ns2:id
+		url="http://52.43.78.47:8080/ClinicRestWebService-1.0.0/resources/patient"
+		relation="http://cs548.stevens.edu/clinic/rest/relations/patient"
+		mediaType="application/xml" />
+	<ns2:patient-id>289852</ns2:patient-id>
+	<ns2:name>Max Colefield</ns2:name>
+	<ns2:dob>1994-03-22</ns2:dob>
+	<ns2:age>22</ns2:age>
+	<ns2:treatments
+		url="http://52.43.78.47:8080/ClinicRestWebService-1.0.0/resources/treatment/56"
+		relation="http://cs548.stevens.edu/clinic/rest/relations/treatment"
+		mediaType="application/xml" />
+	<ns2:treatments
+		url="http://52.43.78.47:8080/ClinicRestWebService-1.0.0/resources/treatment/57"
+		relation="http://cs548.stevens.edu/clinic/rest/relations/treatment"
+		mediaType="application/xml" />
+	<ns2:treatments
+		url="http://52.43.78.47:8080/ClinicRestWebService-1.0.0/resources/treatment/58"
+		relation="http://cs548.stevens.edu/clinic/rest/relations/treatment"
+		mediaType="application/xml" />
+	<patientDtoFactory />
+</patientRepresentation>

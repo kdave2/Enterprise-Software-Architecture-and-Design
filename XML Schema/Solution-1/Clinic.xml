@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Clinic 
+xmlns:p="http://www.example.org/schemas/clinic/clinic_ids" 
+xmlns:tns="http://www.example.org/schemas/clinic" 
+xmlns:pat="http://www.example.org/schemas/clinic/patient" 
+xmlns:trmt="http://www.example.org/schemas/clinic/treatment" 
+xmlns:prov="http://www.example.org/schemas/clinic/provider" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.example.org/schemas/clinic Clinic.xsd ">
+<pat:Patient>
+	<pat:patient-id>1234</pat:patient-id>
+	<pat:name>Ryan Booth</pat:name>
+	<pat:dob>1989-09-13</pat:dob>
+	<pat:treatments>
+		<pat:treatment>
+			<trmt:provider-id>1</trmt:provider-id>
+			<trmt:diagnosis>Infection</trmt:diagnosis>
+			<trmt:drug-treatment>
+				<trmt:name>Cipflox</trmt:name>
+				<trmt:dosage>15</trmt:dosage>
+			</trmt:drug-treatment>
+		</pat:treatment>
+	</pat:treatments>
+</pat:Patient>
+<pat:Patient>
+	<pat:patient-id>1235</pat:patient-id>
+	<pat:name>Alex Parish</pat:name>
+	<pat:dob>1990-10-25</pat:dob>
+	<pat:treatments>
+		<pat:treatment>
+			<trmt:provider-id>2</trmt:provider-id>
+			<trmt:diagnosis>Appendicitis</trmt:diagnosis>
+			<trmt:surgery>
+			<trmt:date>2016-10-12</trmt:date>
+			</trmt:surgery>
+		</pat:treatment>
+	</pat:treatments>
+</pat:Patient>
+<pat:Patient>
+	<pat:patient-id>1236</pat:patient-id>
+	<pat:name>Rochelle Karimi</pat:name>
+	<pat:dob>1984-09-19</pat:dob>
+	<pat:treatments>
+		<pat:treatment>
+			<trmt:provider-id>3</trmt:provider-id>
+			<trmt:diagnosis>Breasts Cancer</trmt:diagnosis>
+			<trmt:radiology>
+			<trmt:date>2016-08-23</trmt:date>
+			<trmt:date>2016-09-23</trmt:date>
+			<trmt:date>2016-10-23</trmt:date>
+			</trmt:radiology>
+		</pat:treatment>
+	</pat:treatments>
+</pat:Patient>
+<prov:Provider>
+	<prov:provider-id>1</prov:provider-id>
+	<prov:name>Dr. Akash Singh</prov:name>
+	<prov:specialization>Oncology</prov:specialization>
+</prov:Provider>
+<prov:Provider>
+	<prov:provider-id>2</prov:provider-id>
+	<prov:name>Dr.Rajaram</prov:name>
+	<prov:specialization>Surgery</prov:specialization>
+</prov:Provider>
+<prov:Provider>
+	<prov:provider-id>3</prov:provider-id>
+	<prov:name>Dr.Sen Gupta</prov:name>
+	<prov:specialization>Radiology</prov:specialization>
+</prov:Provider>
+</tns:Clinic>

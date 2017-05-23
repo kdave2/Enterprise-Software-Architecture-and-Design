@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<providerRepresentation
+	xmlns:ns2="http://cs548.stevens.edu/clinic/service/web/rest/data">
+	<ns2:id
+		url="http://52.43.78.47:8080/ClinicRestWebService-1.0.0/resources/provider/203"
+		relation="http://cs548.stevens.edu/clinic/rest/relations/provider"
+		mediaType="application/xml" />
+	<ns2:provider-id>322456798</ns2:provider-id>
+	<ns2:name>Ori</ns2:name>
+	<ns2:specialization>Surgery</ns2:specialization>
+	<providerDtoFactory />
+</providerRepresentation>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://cs548.stevens.edu/clinic/dto" 
+			xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+			jaxb:version="2.0"
+			elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://cs548.stevens.edu/clinic/dto">
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings>
+				<jaxb:javaType
+					name="java.util.Date"
+					xmlType="date"
+					parseMethod="edu.stevens.cs548.clinic.service.dto.DateAdapter.parseDate"
+					printMethod="edu.stevens.cs548.clinic.service.dto.DateAdapter.printDate"
+				/>
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+
+
+<element name="treatment-dto">
+	<xs:complexType>
+        <xs:sequence>
+            <xs:element name="Diagnosis" type="xs:string"/>
+            <xs:choice>
+                <xs:element name="drug-treatment" type="tns:DrugTreatmentType"/>
+                <xs:element name="Radiology" type="tns:RadiologyType"/>
+                <xs:element name="Surgery" type="tns:SurgeryType"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+    </element>
+    <xs:complexType name="DrugTreatmentType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="diagnosis" type="xs:string"/>
+            <xs:element name="prescribingPhysician" type="xs:string"/>
+            <xs:element name="dosage" type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RadiologyType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="date" type="xs:date"/>
+            <xs:element name="radiologist" type="xs:string"/>
+            <xs:element name="diagnosis" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SurgeryType">
+        <xs:sequence>
+            <xs:element name="date" type="xs:date"/>
+            <xs:element name="diagnosis" type="xs:string"/>
+            <xs:element name="surgeon" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>
